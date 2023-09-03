@@ -1,0 +1,28 @@
+Question 1 What is the correct way to declare a variable in Python?
+a) var x = 5
+b) x = 5
+c) int x = 5
+d) declare x = 5
+Correct Answer: b
+
+Question 2 Which of the following is a Python data type?
+a) Integer
+b) String
+c) Float
+d) All of the above
+Correct Answer: d
+
+Question 3 How do you write a comment in Python?
+a) // This is a comment
+b) /* This is a comment */
+c) # This is a comment
+d) <!-- This is a comment -->
+Correct Answer: c
+
+Question 4 What is the correct syntax to create a function in Python?
+a) create my_function():
+b) def my_function():
+c) function my_function():
+d) my_function():
+Correct Answer: b
+
