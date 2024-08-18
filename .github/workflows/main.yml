@@ -1,0 +1,38 @@
+name: Auto Commit
+
+on:
+  schedule:
+    - cron: '0 */8 * * *' # Runs every 8 hours
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8' # Adjust as needed
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt # Adjust if you have specific dependencies
+
+      - name: Make Changes
+        run: |
+          # Here you can add commands to modify files
+          echo "Update on $(date)" >> changes.txt
+
+      - name: Commit Changes
+        run: |
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
+          git add changes.txt
+          git commit -m "Automated commit: Update on $(date)" || echo "No changes to commit"
+
+      - name: Push Changes
+        run: git push origin main # Change 'main' to your default branch if necessary
